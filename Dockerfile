@@ -1,6 +1,6 @@
 FROM java:8-jre-alpine
 ADD https://github.com/lightbody/browsermob-proxy/releases/download/browsermob-proxy-2.1.4/browsermob-proxy-2.1.4-bin.zip /api/
-ENV JAVA_OPTS="-Xmx1g -XX:+AlwaysPreTouch -XX:CMSInitiatingOccupancyFraction=10 -XX:ParallelGCThreads=4 -XX:ConcGCThreads=4 -XX:+UseConcMarkSweepGC"
+ENV JAVA_OPTS="-Xmx2g -XX:+AlwaysPreTouch -XX:CMSInitiatingOccupancyFraction=10 -XX:ParallelGCThreads=4 -XX:ConcGCThreads=4 -XX:+UseConcMarkSweepGC"
 WORKDIR /api
 RUN export JAVA_OPTS && \
     unzip browsermob-proxy-2.1.4-bin.zip  && rm browsermob-proxy-2.1.4-bin.zip
